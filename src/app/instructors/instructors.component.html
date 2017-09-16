@@ -1,0 +1,9 @@
+<div class="card" *ngFor="let instructor of instructors">
+  <header class="card-header">
+    <p class="card-header-title">{{ instructor.first_name}} {{ instructor.last_name }}</p>
+  </header>
+  <div class="card-content">
+    <p><i class="fa fa-envelope"></i> {{ instructor.email }}</p>
+    <p><i class="fa fa-users"></i> {{ instructor.company }}</p>
+  </div>
+</div>
