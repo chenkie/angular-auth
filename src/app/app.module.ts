@@ -15,13 +15,15 @@ import { InstructorsComponent } from './instructors/instructors.component';
 import { TokenInterceptorService } from './auth/token-interceptor.service';
 import { AuthGuardService } from './auth/auth-guard.service';
 import { RoleGuardService } from './auth/role-guard.service';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    InstructorsComponent
+    InstructorsComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,20 @@
+<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand is-uppercase">
+    <a routerLink="home" class="navbar-item">
+    <img src="assets/img/angular.png" alt="Angular Logo">
+    Angular Auth
+  </a>
+  </div>
+  <div class="navbar-start is-uppercase">
+    <a routerLink="instructors" class="navbar-item" *ngIf="authService.isAuthenticated()">
+        Instructors
+    </a>
+    <a routerLink="instructors" class="navbar-item" *ngIf="authService.isAuthenticated() && authService.hasRole('admin')">
+        Admin
+    </a>
+  </div>
+  <div class="navbar-end is-uppercase">
+    <a routerLink="login" class="navbar-item" *ngIf="!authService.isAuthenticated()">Log In</a>
+    <a (click)="authService.logout()" class="navbar-item" *ngIf="authService.isAuthenticated()">Log Out</a>
+  </div>
+</nav>

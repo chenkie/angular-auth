@@ -19,7 +19,7 @@ export class AuthService {
 
   logout(): void {
     localStorage.removeItem('token');
-    this.router.navigate(['home']);
+    this.router.navigate(['login']);
   }
 
   setSession(token: string): void {
@@ -28,11 +28,7 @@ export class AuthService {
   }
 
   getToken(): String {
-    const token = localStorage.getItem('token');
-    if (!token) {
-      throw new Error('No token found');
-    }
-    return token;
+    return localStorage.getItem('token');
   }
 
   isAuthenticated(): boolean {
@@ -49,7 +45,6 @@ export class AuthService {
   hasRole(role: string): boolean {
     const token: any = this.getToken();
     const roleClaim = decode(token).role;
-    console.log(roleClaim);
     return roleClaim === role;
   }
 }

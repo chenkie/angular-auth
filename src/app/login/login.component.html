@@ -1,33 +1,37 @@
-<div class="card">
-  <div class="card-content">
-    <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
-      <div class="notification is-danger" *ngIf="loginError">
-        {{ loginError }}
+<div class="columns">
+  <div class="column is-half is-offset-one-quarter">
+    <div class="card">
+      <div class="card-content">
+        <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+          <div class="notification is-danger" *ngIf="loginError">
+            {{ loginError }}
+          </div>
+          <div class="field">
+            <label class="label">Email</label>
+            <div class="control has-icons-left">
+              <input name="email" class="input" type="email" placeholder="Enter your email" ngModel>
+              <span class="icon is-small is-left">
+                <i class="fa fa-envelope"></i>
+              </span>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Password</label>
+            <div class="control has-icons-left">
+              <input name="password" class="input" type="password" placeholder="Enter your password" ngModel>
+              <span class="icon is-small is-left">
+                <i class="fa fa-lock"></i>
+              </span>
+            </div>
+          </div>
+          <div class="field is-grouped">
+            <div class="control">
+              <button class="button is-primary" *ngIf="!fetching">Submit</button>
+              <button class="button is-primary is-loading" *ngIf="fetching">Loading</button>
+            </div>
+          </div>
+        </form>
       </div>
-      <div class="field">
-        <label class="label">Email</label>
-        <div class="control has-icons-left">
-          <input name="email" class="input" type="email" placeholder="Enter your email" ngModel>
-          <span class="icon is-small is-left">
-            <i class="fa fa-envelope"></i>
-          </span>
-        </div>
-      </div>
-      <div class="field">
-        <label class="label">Password</label>
-        <div class="control has-icons-left">
-          <input name="password" class="input" type="password" placeholder="Enter your password" ngModel>
-          <span class="icon is-small is-left">
-            <i class="fa fa-lock"></i>
-          </span>
-        </div>
-      </div>
-      <div class="field is-grouped">
-        <div class="control">
-          <button class="button is-primary" *ngIf="!fetching">Submit</button>
-          <button class="button is-primary is-loading" *ngIf="fetching">Loading</button>
-        </div>
-      </div>
-    </form>
+    </div>
   </div>
 </div>
