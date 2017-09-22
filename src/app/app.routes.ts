@@ -8,10 +8,5 @@ import { RoleGuardService as RoleGuard } from './auth/role-guard.service';
 export const ROUTES: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
-  {
-    path: 'instructors',
-    component: InstructorsComponent,
-    canActivate: [AuthGuard]
-  },
   { path: '**', redirectTo: 'home' }
 ];

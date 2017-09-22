@@ -7,10 +7,8 @@ export class AuthGuardService implements CanActivate {
   constructor(public authService: AuthService, public router: Router) {}
 
   canActivate(): boolean {
-    if (!this.authService.isAuthenticated()) {
-      this.router.navigate(['home']);
-      return false;
-    }
-    return true;
+    // if the user isn't authenticated, redirect them
+    // to the home route
+    return false;
   }
 }
