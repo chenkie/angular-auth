@@ -13,11 +13,5 @@ export const ROUTES: Routes = [
     component: InstructorsComponent,
     canActivate: [AuthGuard]
   },
-  {
-    path: 'admin',
-    loadChildren: './admin/admin.module#AdminModule',
-    canLoad: [RoleGuard],
-    data: { expectedRole: 'admin' }
-  },
   { path: '**', redirectTo: 'home' }
 ];

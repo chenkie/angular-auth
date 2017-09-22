@@ -43,8 +43,8 @@ export class AuthService {
   }
 
   hasRole(role: string): boolean {
-    const token: any = this.getToken();
-    const roleClaim = decode(token).role;
-    return roleClaim === role;
+    // get the token
+    // get and return the role claim
+    return false;
   }
 }
