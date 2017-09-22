@@ -12,8 +12,8 @@ export class InstructorsComponent implements OnInit {
   constructor(public http: HttpClient) {}
 
   ngOnInit() {
-    this.http
-      .get(`${API_URL}/instructors`)
-      .subscribe(data => (this.instructors = data));
+    // this.http
+    //   .get(`${API_URL}/instructors`)
+    //   .subscribe(data => (this.instructors = data));
   }
 }

@@ -19,19 +19,16 @@ export class TokenInterceptorService implements HttpInterceptor {
     request: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
+    // clone the request and set the header
     request = request.clone({
-      setHeaders: {
-        Authorization: `Bearer ${localStorage.getItem('token')}`
-      }
+      // setHeaders
     });
 
     return next.handle(request).do(
       (event: HttpEvent<any>) => {},
       (err: any) => {
         if (err instanceof HttpErrorResponse) {
-          if (err.status === 401) {
-            this.router.navigate(['login']);
-          }
+          // if the status is 401, redirect to login
         }
       }
     );
